@@ -47,11 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        church: {
-          DEFAULT: "hsl(var(--church-accent))",
+        narrative: {
+          DEFAULT: "hsl(var(--narrative-accent))",
         },
-        media: {
-          DEFAULT: "hsl(var(--media-accent))",
+        scribe: {
+          DEFAULT: "hsl(var(--scribe-accent))",
         },
       },
       fontFamily: {

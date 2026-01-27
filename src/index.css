@@ -2,76 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @layer base {
   :root {
-    --background: 45 20% 97%;
-    --foreground: 220 20% 12%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 12%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 12%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 220 20% 12%;
-    --primary-foreground: 45 20% 97%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 45 15% 92%;
-    --secondary-foreground: 220 20% 12%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 45 15% 92%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 25 80% 55%;
+    --accent: 24 70% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 25 80% 55%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 24 70% 50%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --church-accent: 220 45% 45%;
-    --media-accent: 25 80% 55%;
-    --hero-gradient: linear-gradient(135deg, hsl(45 20% 97%) 0%, hsl(45 15% 92%) 100%);
-    --card-shadow: 0 4px 24px -4px hsl(220 20% 12% / 0.08);
-    --card-shadow-hover: 0 12px 32px -8px hsl(220 20% 12% / 0.15);
+    /* Sub-brand tokens */
+    --narrative-accent: 220 60% 50%;
+    --scribe-accent: 24 70% 50%;
+    
+    /* Shadows */
+    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.06);
+    --card-shadow-hover: 0 16px 40px -8px hsl(0 0% 0% / 0.12);
+    --hero-overlay: linear-gradient(135deg, hsl(0 0% 8% / 0.7) 0%, hsl(0 0% 8% / 0.4) 100%);
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 45 20% 97%;
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 45 20% 97%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 18% 12%;
-    --popover-foreground: 45 20% 97%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 45 20% 97%;
-    --primary-foreground: 220 20% 12%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 45 20% 97%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 25 80% 55%;
+    --accent: 24 70% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --border: 220 15% 22%;
-    --input: 220 15% 22%;
-    --ring: 25 80% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 24 70% 55%;
 
-    --church-accent: 220 60% 65%;
-    --media-accent: 25 85% 60%;
+    --narrative-accent: 220 70% 60%;
+    --scribe-accent: 24 75% 58%;
   }
 }
 
@@ -93,39 +95,59 @@
 
 @layer components {
   .section-container {
-    @apply max-w-6xl mx-auto px-6 md:px-8;
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
   }
 
-  .text-gradient-church {
-    background: linear-gradient(135deg, hsl(var(--church-accent)) 0%, hsl(220 35% 55%) 100%);
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .text-gradient-narrative {
+    background: linear-gradient(135deg, hsl(var(--narrative-accent)) 0%, hsl(220 50% 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-media {
-    background: linear-gradient(135deg, hsl(var(--media-accent)) 0%, hsl(35 85% 50%) 100%);
+  .text-gradient-scribe {
+    background: linear-gradient(135deg, hsl(var(--scribe-accent)) 0%, hsl(35 80% 55%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .service-card {
-    @apply bg-card rounded-xl p-6 md:p-8 transition-all duration-300;
+    @apply bg-card rounded-2xl p-8 md:p-10 transition-all duration-300 border border-border/50;
     box-shadow: var(--card-shadow);
   }
 
   .service-card:hover {
     box-shadow: var(--card-shadow-hover);
-    transform: translateY(-4px);
+    @apply border-border;
   }
 
-  .branch-church {
-    border-left: 3px solid hsl(var(--church-accent));
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-all duration-200;
   }
 
-  .branch-media {
-    border-left: 3px solid hsl(var(--media-accent));
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-border text-foreground font-medium rounded-full hover:bg-secondary transition-all duration-200;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent text-accent-foreground font-medium rounded-full hover:opacity-90 transition-all duration-200;
+  }
+
+  .branch-narrative {
+    border-left: 3px solid hsl(var(--narrative-accent));
+  }
+
+  .branch-scribe {
+    border-left: 3px solid hsl(var(--scribe-accent));
+  }
+
+  .link-button {
+    @apply w-full py-4 px-6 bg-card border border-border rounded-xl text-center font-medium transition-all duration-200 hover:bg-secondary hover:border-border;
   }
 }
 
@@ -138,10 +160,14 @@
     animation: fadeIn 0.8s ease-out forwards;
   }
 
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -158,8 +184,20 @@
     }
   }
 
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .delay-100 { animation-delay: 100ms; }
   .delay-200 { animation-delay: 200ms; }
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 }
