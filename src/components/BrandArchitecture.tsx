@@ -31,15 +31,15 @@ const BrandArchitecture = () => {
             <ul className="space-y-2 text-sm text-primary-foreground/60">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-narrative" />
-                Documentary Series
+                Documentary Series Creation
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-narrative" />
-                Event Coverage
+                Documentary-Style Event Coverage
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-narrative" />
-                Behind-the-Scenes
+                Regular Event Coverage
               </li>
             </ul>
           </div>
@@ -53,20 +53,16 @@ const BrandArchitecture = () => {
               The Scribe Dept
             </h3>
             <p className="text-primary-foreground/70 leading-relaxed mb-6">
-              Testimonies, written and visual storytelling, and personal narratives. We give voice to the stories that transform lives.
+              Live production excellence and church consulting. We equip teams and lead productions that communicate with clarity.
             </p>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-scribe" />
-                Testimonies
+                Technical Directing
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-scribe" />
-                Written Stories
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-scribe" />
-                Personal Narratives
+                Church Production Consulting
               </li>
             </ul>
           </div>
