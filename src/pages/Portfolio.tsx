@@ -3,6 +3,13 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play, Film, Video, Radio } from "lucide-react";
 
+const featuredWork = {
+  title: "Game Day",
+  description: "A one-minute highlight reel featuring a coach breaking down his starters alongside intense game footage.",
+  youtubeId: "Foc5j-_Wgv0",
+  category: "Event Coverage",
+};
+
 const portfolioItems = {
   documentary: [
     {
@@ -85,6 +92,32 @@ const Portfolio = () => {
                 Every project represents a partnership, a vision brought to life, and an audience moved to action. 
                 Explore our work across documentaries, events, and live production.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Work */}
+        <section className="section-padding">
+          <div className="section-container">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-sm font-medium text-accent uppercase tracking-widest mb-4 text-center">
+                Featured
+              </p>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl mb-4 text-center">
+                {featuredWork.title}
+              </h2>
+              <p className="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+                {featuredWork.description}
+              </p>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-border/50">
+                <iframe
+                  src={`https://www.youtube.com/embed/${featuredWork.youtubeId}?rel=0`}
+                  title={featuredWork.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </section>
