@@ -116,6 +116,14 @@ const Gallery = () => {
     setLoginError("");
   };
 
+  const openDemoGallery = (gallery: ClientGallery) => {
+    setLoginError("");
+    setEmail(gallery.email);
+    setAccessCode(gallery.accessCode);
+    setActiveGallery(gallery);
+    setSelectedVideo(gallery.videos[0] ?? null);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -134,6 +142,24 @@ const Gallery = () => {
                   This gallery page gives clients a clean login experience, a built-in
                   video viewer, and one-click downloads for both stills and films.
                 </p>
+
+                <div className="mb-8 flex flex-wrap gap-3">
+                  {clientGalleries.map((gallery) => (
+                    <button
+                      key={gallery.email}
+                      type="button"
+                      onClick={() => openDemoGallery(gallery)}
+                      className={`rounded-full border px-5 py-3 text-sm font-medium transition ${
+                        activeGallery?.email === gallery.email
+                          ? "border-accent bg-accent text-accent-foreground"
+                          : "border-border bg-card hover:border-accent/50 hover:bg-secondary"
+                      }`}
+                      aria-pressed={activeGallery?.email === gallery.email}
+                    >
+                      Open {gallery.clientName} demo
+                    </button>
+                  ))}
+                </div>
 
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="rounded-2xl bg-card border border-border/60 p-5">
@@ -215,7 +241,8 @@ const Gallery = () => {
 
                 <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
                   Demo mode is currently turned on for testing, so the first client
-                  gallery loads automatically below. Connect it to secure auth or
+                  gallery loads automatically below. You can also switch between demo
+                  clients with the buttons on the left. Connect it to secure auth or
                   private storage before using it for production delivery.
                 </p>
               </div>
