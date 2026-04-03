@@ -16,6 +16,7 @@ type GalleryAsset = {
   src: string;
   type: "image" | "video";
   poster?: string;
+  downloadName?: string;
 };
 
 type ClientGallery = {
@@ -56,6 +57,7 @@ const clientGalleries: ClientGallery[] = [
         src: "/client-gallery/videos/jd-wedding.mp4",
         type: "video",
         poster: "/client-gallery/images/jd-wedding-01.jpg",
+        downloadName: "j-and-d-wedding-film.mp4",
       },
     ],
   },
@@ -74,6 +76,7 @@ const clientGalleries: ClientGallery[] = [
         src: "/client-gallery/videos/dr-lola-birthday.mp4",
         type: "video",
         poster: "/client-gallery/images/jd-wedding-02.jpg",
+        downloadName: "dr-lola-birthday-highlight.mp4",
       },
     ],
   },
@@ -122,6 +125,28 @@ const Gallery = () => {
     setAccessCode(gallery.accessCode);
     setActiveGallery(gallery);
     setSelectedVideo(gallery.videos[0] ?? null);
+  };
+
+  const handleAssetDownload = async (asset: GalleryAsset) => {
+    try {
+      const response = await fetch(asset.src);
+      if (!response.ok) {
+        throw new Error("Download failed");
+      }
+
+      const blob = await response.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = asset.downloadName ?? asset.src.split("/").pop() ?? "download";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Asset download failed:", error);
+      window.open(asset.src, "_blank", "noopener,noreferrer");
+    }
   };
 
   return (
@@ -306,14 +331,14 @@ const Gallery = () => {
                             </p>
                           </div>
 
-                          <a
-                            href={selectedVideo.src}
-                            download
+                          <button
+                            type="button"
+                            onClick={() => handleAssetDownload(selectedVideo)}
                             className="btn-primary"
                           >
                             <Download className="mr-2 h-4 w-4" />
                             Download video
-                          </a>
+                          </button>
                         </div>
                       </div>
                     ) : (
@@ -348,9 +373,13 @@ const Gallery = () => {
                                   Full-resolution still download
                                 </p>
                               </div>
-                              <a href={photo.src} download className="btn-secondary px-5 py-3">
+                              <button
+                                type="button"
+                                onClick={() => handleAssetDownload(photo)}
+                                className="btn-secondary px-5 py-3"
+                              >
                                 <Download className="h-4 w-4" />
-                              </a>
+                              </button>
                             </div>
                           </article>
                         ))}
