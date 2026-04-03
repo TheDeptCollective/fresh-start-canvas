@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Links from "./pages/Links";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const AppContent = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/links" element={<Links />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/product/:handle" element={<Product />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
