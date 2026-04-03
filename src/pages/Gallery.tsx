@@ -80,11 +80,14 @@ const clientGalleries: ClientGallery[] = [
 ];
 
 const Gallery = () => {
+  const defaultGallery = clientGalleries[0];
   const [email, setEmail] = useState("");
   const [accessCode, setAccessCode] = useState("");
   const [loginError, setLoginError] = useState("");
-  const [activeGallery, setActiveGallery] = useState<ClientGallery | null>(null);
-  const [selectedVideo, setSelectedVideo] = useState<GalleryAsset | null>(null);
+  const [activeGallery, setActiveGallery] = useState<ClientGallery | null>(defaultGallery);
+  const [selectedVideo, setSelectedVideo] = useState<GalleryAsset | null>(
+    defaultGallery.videos[0] ?? null
+  );
 
   const handleLogin = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -211,8 +214,8 @@ const Gallery = () => {
                 </form>
 
                 <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                  This version uses sample client credentials in the front end so the
-                  gallery flow can be previewed right away. Connect it to secure auth or
+                  Demo mode is currently turned on for testing, so the first client
+                  gallery loads automatically below. Connect it to secure auth or
                   private storage before using it for production delivery.
                 </p>
               </div>
