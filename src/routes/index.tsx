@@ -1,23 +1,74 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+
+import Navbar from "@/components/site/Navbar";
+import Hero from "@/components/site/Hero";
+import SelectedWork from "@/components/site/SelectedWork";
+import Approach from "@/components/site/Approach";
+import Director from "@/components/site/Director";
+import Journal from "@/components/site/Journal";
+import Contact from "@/components/site/Contact";
+import Footer from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Blank Project" },
-      { name: "description", content: "A blank canvas ready for your ideas." },
-      { property: "og:title", content: "Blank Project" },
-      { property: "og:description", content: "A blank canvas ready for your ideas." },
+      { title: "Riann Grant — The Department Collective" },
+      {
+        name: "description",
+        content:
+          "Riann Grant is a director and cinematographer — creative lead of The Department Collective. Brand films, documentaries, and community stories with care in every frame.",
+      },
+      { property: "og:title", content: "Riann Grant — The Department Collective" },
+      {
+        property: "og:description",
+        content:
+          "Director & cinematographer. Brand films, documentaries, and community stories.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap",
+      },
     ],
   }),
   component: Index,
 });
 
 function Index() {
+  // reveal-on-scroll for any element with .reveal (hero elements start .on)
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("on");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll(".reveal:not(.on)").forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background text-foreground">
-      <p className="text-muted-foreground">Your app will live here.</p>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <SelectedWork />
+        <Approach />
+        <Director />
+        <Journal />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
