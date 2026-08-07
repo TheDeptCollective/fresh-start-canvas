@@ -7,10 +7,10 @@ interface Project {
   previewVimeoId: string;
 }
 
-// Produced with Impact Loop — looping muted previews, click to play full film
+// Produced with Impact Loop: looping muted previews, click to play full film
 const projects: Project[] = [
   {
-    title: "EmployNext — Youth Trades Program",
+    title: "EmployNext: Youth Trades Program",
     category: "Documentary / Program Film",
     vimeoId: "1174716942",
     previewVimeoId: "1174716942",

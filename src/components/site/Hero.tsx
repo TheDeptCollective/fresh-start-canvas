@@ -7,7 +7,7 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ height: "clamp(560px, calc(100vh - 340px), 720px)", minHeight: "560px" }}
     >
-      {/* Hero image — anchored right, fading into black on the left and bottom */}
+      {/* Hero image: anchored right, fading into black on the left and bottom */}
       <div className="absolute inset-y-0 right-0 w-[70%] md:w-[61%] z-0">
         <img
           src={heroImg}
@@ -44,7 +44,7 @@ export default function Hero() {
           </h1>
           <p className="reveal on d2 max-w-[300px] text-[15px] leading-[1.6] text-ink-dim font-light">
             I partner with visionary brands and agencies to craft cinematic
-            work that moves people—emotionally and aesthetically.
+            work that moves people, emotionally and aesthetically.
           </p>
           <a
             href="#work"
@@ -55,18 +55,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Quote — bottom right */}
+      {/* Quote: bottom right */}
       <div className="reveal on d3 hidden lg:block absolute z-[2] right-[clamp(28px,3.6vw,60px)] bottom-[100px] max-w-[150px]">
         <p className="text-[14.5px] leading-[1.55] text-ink/90 font-light mb-4">
           &ldquo;The ability to create emotion in a frame is
           everything.&rdquo;
         </p>
         <span className="text-[9.5px] uppercase tracking-[0.25em] text-ink-dim">
-          — Riann Grant
+          Riann Grant
         </span>
       </div>
 
-      {/* Scroll hint — right edge */}
+      {/* Scroll hint: right edge */}
       <div className="hidden md:flex absolute z-[3] right-[clamp(24px,3.2vw,56px)] bottom-4 flex-col items-center gap-3">
         <span
           className="text-[9px] uppercase tracking-[0.4em] text-ink-faint"

@@ -27,13 +27,13 @@ export default function Director() {
           </h2>
           <p className="max-w-[520px] text-[15px] leading-[1.85] text-ink-dim mb-4">
             Riann Grant is a director and cinematographer, and the creative
-            lead of The Department Collective — a studio built around one
+            lead of The Department Collective, a studio built around one
             belief: that great work makes people feel something before it
             makes them think.
           </p>
           <p className="max-w-[520px] text-[15px] leading-[1.85] text-ink-dim">
             From brand films to community stories, her work spans subjects and
-            formats while holding one constant — a cinematic approach to
+            formats while holding one constant: a cinematic approach to
             storytelling, and care in every frame.
           </p>
           <a

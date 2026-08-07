@@ -2,17 +2,17 @@ const principles = [
   {
     num: "01",
     title: "Story First",
-    body: "Before cameras, before lenses — a narrative worth telling. Concept and intention drive every creative decision from the first conversation.",
+    body: "Before cameras, before lenses, there is a narrative worth telling. Concept and intention drive every creative decision from the first conversation.",
   },
   {
     num: "02",
     title: "Crafted in Camera",
-    body: "Light, movement, and composition built with a cinematic eye — so every frame could stand on its own.",
+    body: "Light, movement, and composition built with a cinematic eye, so every frame could stand on its own.",
   },
   {
     num: "03",
     title: "Finished with Feeling",
-    body: "Edit, colour, and sound shaped until the work doesn't just look right — it lands. Emotion is the final deliverable.",
+    body: "Edit, colour, and sound shaped until the work doesn't just look right. It lands. Emotion is the final deliverable.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function Approach() {
             fontWeight: 100,
           }}
         >
-          Every project begins with a question —{" "}
+          Every project begins with a question:{" "}
           <em className="not-italic text-accent">
             what should the audience feel?
           </em>{" "}

@@ -30,7 +30,7 @@ export default function Navbar() {
           href="#top"
           className="text-[10.5px] uppercase font-normal tracking-[0.28em] text-ink whitespace-nowrap no-underline"
         >
-          Riann Grant&nbsp;&nbsp;—&nbsp;&nbsp;The Department Collective
+          Riann Grant&nbsp;&nbsp;&middot;&nbsp;&nbsp;The Department Collective
         </a>
         <ul className="hidden md:flex list-none gap-[clamp(20px,3vw,52px)]">
           {links.map((l) => (

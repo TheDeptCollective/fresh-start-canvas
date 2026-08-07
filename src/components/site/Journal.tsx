@@ -12,7 +12,7 @@ export default function Journal() {
             fontWeight: 100,
           }}
         >
-          Notes from set and screen — process, references, and stories behind
+          Notes from set and screen: process, references, and stories behind
           the work. Coming soon.
         </p>
       </div>
