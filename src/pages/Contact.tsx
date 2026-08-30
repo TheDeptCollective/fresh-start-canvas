@@ -108,10 +108,10 @@ const Contact = () => {
                     Prefer email?
                   </p>
                   <a
-                    href="mailto:hello@departmentcollective.com"
+                    href="mailto:hello@thedeptcollective.com"
                     className="text-foreground font-medium hover:text-accent transition-colors"
                   >
-                    hello@departmentcollective.com
+                    hello@thedeptcollective.com
                   </a>
                 </div>
               </div>
