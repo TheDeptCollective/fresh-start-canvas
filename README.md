@@ -71,3 +71,19 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Contact form email delivery
+
+The `/contact` form sends submissions through FormSubmit to
+`hello@thedeptcollective.com`, with the visitor's address as Reply-To.
+No email credentials belong in the frontend.
+
+Before launch, submit a test from the deployed site's contact page. If the inbox
+has not been activated with FormSubmit, open its confirmation email (check spam)
+and confirm the address. Then submit another test and verify it arrives in the
+inbox. API acceptance alone does not prove inbox delivery. See
+https://formsubmit.co/ for the provider's activation instructions.
+
+The form retains the visitor's message on network or provider errors and offers
+the direct email address as a fallback. Automated tests mock provider responses;
+they do not send email or confirm activation.
